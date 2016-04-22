@@ -28,13 +28,16 @@ config = {
   production: {
     url: process.env.HEROKU_URL,
     mail: {
+      from: process.env.SES_SMTP_FROM,
       transport: 'SMTP',
       options: {
-        service: 'Mailgun',
-        auth: {
-          user: process.env.MAILGUN_SMTP_LOGIN,
-          pass: process.env.MAILGUN_SMTP_PASSWORD
-        }
+          host: process.env.SES_SMTP_HOST,
+          port: process.env.SES_SMTP_PORT,
+          service: 'SES',
+          auth: {
+              user: process.env.SES_SMTP_LOGIN,
+              pass: process.env.SES_SMTP_PASSWORD
+          }
       }
     },
     fileStorage: fileStorage,
