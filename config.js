@@ -31,13 +31,13 @@ config = {
       from: process.env.SES_SMTP_FROM,
       transport: 'SMTP',
       options: {
-          host: process.env.SES_SMTP_HOST,
-          port: process.env.SES_SMTP_PORT,
-          service: 'SES',
-          auth: {
-              user: process.env.SES_SMTP_LOGIN,
-              pass: process.env.SES_SMTP_PASSWORD
-          }
+        host: process.env.SES_SMTP_HOST,
+        port: process.env.SES_SMTP_PORT,
+        service: 'SES',
+        auth: {
+          user: process.env.SES_SMTP_LOGIN,
+          pass: process.env.SES_SMTP_PASSWORD
+        }
       }
     },
     fileStorage: fileStorage,
